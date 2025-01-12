@@ -1,0 +1,34 @@
+apiVerison: v1
+kind: deployment
+metadata: name: nginx
+        label: 
+        app: nginx
+spec:
+        replicas:1
+        matchmaker:
+                matchlabel:
+                        label: app: nginx
+        templete:
+                metadata:
+                        name: nginx
+                label:
+                        app: nginx
+                spec:
+                       contianer
+                image: nginx:1.27.0
+        metadata: name: nginx
+        label:
+                app:nginx
+
+        setresource:
+                request.cpu: "1"
+        request.memory: "1Gi"
+        limit.cpu: "1"
+limit.memory: "15GI"
+
+volumemount:
+        name: nginx_volume
+        path: ../../data
+
+volumemountclaim:
+
